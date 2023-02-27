@@ -1,1 +1,1 @@
-C - Functions, nested loops
+C - Pointers, arrays and strings
