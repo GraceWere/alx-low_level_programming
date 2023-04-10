@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * This code helps to convert a binary string to an unsigned integer
- * It checks if the binary string is valid and contains only 0s and 1s
- * If the string is valid, it converts the binary string to an unsigned integer
- * If the string is invalid, it returns 0
+ * binary_to_uint - converts a binary string to an unsigned integer
+ * @b: pointer to a binary string
+ * Return: the converted unsigned integer, or 0 if @b is NULL or contains
+ * characters other than '0' and '1'.
 */
 
 unsigned int binary_to_uint(const char *b)
