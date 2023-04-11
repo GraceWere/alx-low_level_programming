@@ -8,9 +8,11 @@
  * Return: 1 on success, -1 on failure
  *
  * Description: This function sets a bit at a given index to the value of 1 in
- * the specified number. It takes a pointer to the number that needs to be changed
+ * the specified number. It takes a pointer to the number
+ * that needs to be changed
  * and the index of the bit that should be set as parameters. If the index is
- * greater than 63, the function returns -1 to indicate failure; otherwise, it sets
+ * greater than 63, the function returns -1
+ * to indicate failure; otherwise, it sets
  * the bit at the specified index and returns 1 to indicate success.
  */
 int set_bit(unsigned long int *n, unsigned int index)
