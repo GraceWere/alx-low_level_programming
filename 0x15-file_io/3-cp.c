@@ -36,7 +36,10 @@ exit(100);
 }
 /**
  * main - Copies the contents of a file to another file.
- * @argc: The number of arguments supplied to the program.
+ * @argc :The number of arguments supplied to the program.
+ * @argv :contains the actual command-line arguments,
+ * where each element in the array is a pointer to a
+ * null-terminated string
  * Return: 0 on success.
  * Description:
  * If the argument count is incorrect - exit code 97.
@@ -65,21 +68,19 @@ dprintf(STDERR_FILENO,
 free(buffer);
 exit(98);
 }
- w = write(to, buffer, r);
- if (to == -1 || w == -1)
- { 	dprintf(STDERR_FILENO,
- 		"Error: Can't write to %s\n", argv[2]);
- 	free(buffer);
- 	exit(99);
- }
-
- r = read(from, buffer, 1024);
- to = open(argv[2], O_WRONLY | O_APPEND);
+w = write(to, buffer, r);
+if (to == -1 || w == -1)
+{
+dprintf(STDERR_FILENO,
+"Error: Can't write to %s\n", argv[2]);
+free(buffer);
+exit(99);
+}
+r = read(from, buffer, 1024);
+to = open(argv[2], O_WRONLY | O_APPEND);
 } while (r > 0);
-
 free(buffer);
 close_file(from);
 close_file(to);
-
 return (0);
 }
